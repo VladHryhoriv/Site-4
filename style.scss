@@ -1,38 +1,82 @@
-button{
+$blue:  #00b6e8;
+$black: #000;
+$white: #fff;
+
+@mixin text-center {
+  width: 100%;
+  text-align: center;
+}
+@mixin flexible (){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.button {
   border-radius: 30px;
   padding: 10px 0;
   text-align: center;
   font-size: 14px;
-}
-.white-button {
-  background-color: white;
-  color: black;
-  border: 1px solid black;
   width: 222px;
-}
-.black-button {
-  background-color: black;
-  color: white;
-  border: 1px solid black;
-  width: 222px;
-  margin-right: 20px;
+  text-transform: uppercase;
+  &_white{
+    background: $white;
+    color: $black;
+    border: 1px solid $black;
+  }
+  &_black{
+    background-color: $black;
+    color: $white;
+    border: 1px solid $black;
+    margin-right: 20px;
+  }
 }
 .blue-text {
-  color: #00b6e8;
+  color: $blue;
+}
+.mt-150 {
+  margin-top: 150px;
+}
+.title {
+  &_large {
+    @include text-center();
+    font-size: 49px;
+  }
+  &_normal {
+    @include text-center();
+    font-size: 28px;
+  }
+  &_small {
+    font-size: 24px;
+  }
+}
+.text {
+  &_small {
+    @include text-center();
+    font-size: 14px;
+    margin-top: 110px;
+  }
+  &_normal {
+    @include text-center();
+    font-size: 18px;
+  }
+  &_large {
+    font-size: 52px;
+  }
 }
 body{
-  max-width: 1920px;
-  width: 100%;
   margin: 0 auto;
+  max-width: 1920px;
   .wrapper-app{
     max-width: 1400px;
     width: 100%;
+    margin: 0 auto;
     padding: 30px 0;
     .section-1{
       width: 100%;
       display: flex;
       justify-content: space-between;
-      margin-top: 135px;
       flex-wrap: wrap;
       .section-1__img {
         width: 50%;
@@ -51,9 +95,14 @@ body{
       }
       .section-1__text{
         font-size: 14px;
-        width: 100%;
-        text-align: center;
+        @include text-center();
         margin-top: 110px;
+      }
+    }
+
+    .section-2 {
+      .wrapper-item { 
+        @include flexible();
       }
     }
   }

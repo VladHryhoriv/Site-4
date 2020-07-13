@@ -1,22 +1,20 @@
-button {
+.button {
   border-radius: 30px;
   padding: 10px 0;
   text-align: center;
   font-size: 14px;
-}
-
-.white-button {
-  background-color: white;
-  color: black;
-  border: 1px solid black;
   width: 222px;
+  text-transform: uppercase;
 }
-
-.black-button {
-  background-color: black;
-  color: white;
-  border: 1px solid black;
-  width: 222px;
+.button_white {
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+.button_black {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
   margin-right: 20px;
 }
 
@@ -24,21 +22,53 @@ button {
   color: #00b6e8;
 }
 
-body {
-  max-width: 1920px;
+.mt-150 {
+  margin-top: 150px;
+}
+
+.title_large {
   width: 100%;
+  text-align: center;
+  font-size: 49px;
+}
+.title_normal {
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+}
+.title_small {
+  font-size: 24px;
+}
+
+.text_small {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 110px;
+}
+.text_normal {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+.text_large {
+  font-size: 52px;
+}
+
+body {
   margin: 0 auto;
+  max-width: 1920px;
 }
 body .wrapper-app {
   max-width: 1400px;
   width: 100%;
+  margin: 0 auto;
   padding: 30px 0;
 }
 body .wrapper-app .section-1 {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 135px;
   flex-wrap: wrap;
 }
 body .wrapper-app .section-1 .section-1__img {
@@ -61,4 +91,9 @@ body .wrapper-app .section-1 .section-1__text {
   width: 100%;
   text-align: center;
   margin-top: 110px;
+}
+body .wrapper-app .section-2 .wrapper-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
