@@ -51,38 +51,81 @@ $font-weight: (
   flex: auto;
 }
 .w {
-  &_50 {
+  &-50 {
     width: 50%;
   }
-  &_100 {
+  &-100 {
     width: 100%;
   }
 }
 .mt-150 {
   margin-top: 150px;
 }
+.text {
+  &--small {
+    color: map-get($colors, grey );
+    font-size: 14px;
+  }
+  &--normal {
+    font-size: 18px;
+  }
+  &--large {
+    font-size: 52px;
+  }
+  &--blue {
+    color: map-get($colors, blue );
+  }
+  &--center {
+    text-align: center;
+  }
+  &--start {
+    text-align: start;
+  }
+  &--end {
+    text-align: end;
+  }
+  @media (max-width:768px) {
+    &--large {
+      font-size: 34px;
+    }
+    &--normal {
+      font-size: 12px;
+    }
+  }
+  @media (max-width:425px) {
+    &--large {
+      font-size: 24px;
+    }
+    &--normal {
+      font-size: 10px;
+    }
+    &--small {
+      font-size: 7px;
+    }
+  }
+}
 .title {
-  &_large {
+  &--large {
     font-size: 49px;
     font-weight: map-get($font-weight, bold );
   }
-  &_normal {
+  &--normal {
     font-size: 28px;
     font-weight: bold;
     margin: 30px 0;
   }
-  &_small {
+  &--small {
     font-size: 24px;
     font-weight: map-get($font-weight, bold );
   }
   @media (max-width:768px) {
-    &_large {
+    &--large {
       font-size: 28px;
     }
-    &_normal {
+    &--normal {
       font-size: 20px;
     }
-    &_small {
+    &--small {
       font-size: 17px;
     }
   }
@@ -96,65 +139,22 @@ $font-weight: (
     }
   }
 }
-.text {
-  &_small {
-    color: map-get($colors, grey );
-    font-size: 14px;
-  }
-  &_normal {
-    font-size: 18px;
-  }
-  &_large {
-    font-size: 52px;
-  }
-  &_blue {
-    color: map-get($colors, blue );
-  }
-  &_center {
-    text-align: center;
-  }
-  &_start {
-    text-align: start;
-  }
-  &_end {
-    text-align: end;
-  }
-  @media (max-width:768px) {
-    &_large {
-      font-size: 34px;
-    }
-    &_normal {
-      font-size: 12px;
-    }
-  }
-  @media (max-width:425px) {
-    &_large {
-      font-size: 24px;
-    }
-    &_normal {
-      font-size: 10px;
-    }
-    &_small {
-      font-size: 7px;
-    }
-  }
-}
 .d-f {
   display: flex;
 }
-button, .button {
+.button{
   border-radius: 30px;
   padding: 10px 0;
   text-align: center;
   font-size: 14px;
   width: 222px;
   text-transform: uppercase;
-  &_white{
+  &--white{
     background: map-get($colors, white );
     color: map-get($colors, black);
     border: 1px solid map-get($colors, black);
   }
-  &_black{
+  &--black{
     background-color: map-get($colors, black);
     color: map-get($colors, white );
     border: 1px solid map-get($colors, black);
@@ -171,33 +171,33 @@ button, .button {
   }
 }
 .img {
-  &_large {
+  &--large {
     width: 50%;
     height: 100%;
   }
-  &_normal {
+  &--normal {
     width: 160px;
     height: 160px;
   }
-  &_small {
+  &--small {
     width: 100px;
-    height: 90px;
+    height: 80px;
   }
   @media (max-width:768px) {
-    &_normal {
+    &--normal {
       width: 100px;
       height: 100px;
     }
-    &_small {
+    &--small {
       width: 80px;
       height: 70px;
     }
   }
   @media (max-width:425px) {
-    &_large {
-      height: auto;
+    &--large {
+      height: 200px;
     }
-    &_normal {
+    &--normal {
       width: 80px;
       height: 80px;
     }
@@ -213,14 +213,14 @@ body{
     .section-1{
       justify-content: space-between;
       flex-wrap: wrap;
-      .watch-block{
+      &__watch-block{
         box-sizing: border-box;
         padding-left: 20px;
       }
       @media (max-width:425px) {
         display: block;
         text-align: center;
-        .watch-block {
+        &__watch-block {
           width: 100%;
         }
       }
@@ -232,6 +232,7 @@ body{
         padding: 60px 0 90px 0;
         .item {
           max-width: 365px;
+          text-align: center;
         }
         .wrapper__arrow {
           margin-top: 80px;
